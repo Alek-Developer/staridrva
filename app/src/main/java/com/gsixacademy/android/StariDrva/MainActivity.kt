@@ -5,19 +5,45 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.google.firebase.database.*
+import com.gsixacademy.android.StariDrva.data.TreeListModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom_navigation_layout.*
 
-lateinit var navController: NavController
 
-lateinit var navListener: NavController.OnDestinationChangedListener
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var navController: NavController
+
+    lateinit var navListener: NavController.OnDestinationChangedListener
+
+    lateinit var database: DatabaseReference
+
+    var treeListModel: TreeListModel? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        database = FirebaseDatabase.getInstance().reference
         navController = Navigation.findNavController(this, R.id.navigation_host_fragment)
         initListeners()
+        initialiseFirebaseDatebase()
+    }
+
+    private fun initialiseFirebaseDatebase() {
+        val postListener = object : ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+                // no implementation yet
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                treeListModel = snapshot.getValue(TreeListModel::class.java)
+            }
+
+        }
+
+        database.addValueEventListener(postListener)
     }
 
     fun initListeners() {

@@ -1,16 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/image_view_thumbnail"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    
+    <TextView
+        android:id="@+id/text_view_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/image_view_thumbnail"
+        app:layout_constraintTop_toTopOf="@+id/image_view_thumbnail"
+        android:layout_marginStart="16dp"
+        android:text="Tree Name"
+        android:textColor="#000"
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/text_view_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/image_view_thumbnail"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_name"
+        android:layout_marginStart="16dp"
+        android:text="Tree Location"
+        android:layout_marginTop="5dp"
+        android:textColor="#000"
+        android:textStyle="bold" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/text_view_height"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tree Name"
-        android:gravity="center"
-        android:layout_margin="16dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toEndOf="@+id/image_view_thumbnail"
+        app:layout_constraintBottom_toTopOf="@+id/text_view_age"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="5dp"
+        android:text="Tree Height" />
+
+    <TextView
+        android:id="@+id/text_view_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_thumbnail"
+        app:layout_constraintStart_toEndOf="@+id/image_view_thumbnail"
+        android:layout_marginStart="16dp"
+        android:text="Tree Age" />
+
+    <ImageView
+        android:id="@+id/image_view_monumental"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/icon_monumental" />
+        
+    
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

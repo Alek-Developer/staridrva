@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "495753646681",
+    "firebase_url": "https://staridrva.firebaseio.com",
+    "project_id": "staridrva",
+    "storage_bucket": "staridrva.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495753646681:android:db566b02759c1c7e481748",
+        "android_client_info": {
+          "package_name": "com.gsixacademy.android.staridrva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495753646681-l1vlb6o6psbefvnj6p8hes7hri1k0t9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFBIchZsIReZ4ShXiT1heDOfijScWq02U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "495753646681-l1vlb6o6psbefvnj6p8hes7hri1k0t9s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

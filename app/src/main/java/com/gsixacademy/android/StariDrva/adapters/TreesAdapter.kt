@@ -9,7 +9,10 @@ import com.gsixacademy.android.StariDrva.R
 import com.gsixacademy.android.StariDrva.data.TreeData
 
 
-class TreesAdapter(val treesData: ArrayList<TreeData>, treesAdapterClickEvent: (TreesAdapterClickEvent) -> Unit):RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
+class TreesAdapter(
+    val treesData: ArrayList<TreeData>,
+    val monumental: ArrayList<Int>,
+    treesAdapterClickEvent: (TreesAdapterClickEvent) -> Unit):RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.tree_list_row,parent, false))
